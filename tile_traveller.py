@@ -4,3 +4,5 @@
 #Ask the user for direction
 #If the user inputs a invalid direction, print "Not a valid direction!" and try again
 #Ask user for direction until they are at (3,1), then print "Victory!"
+
+i=1
