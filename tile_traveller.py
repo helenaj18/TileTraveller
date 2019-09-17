@@ -10,6 +10,7 @@ initial_location = 1.1
 
 location = initial_location
 
+a_str=''
 
 def travel_options(location):
     N='(N)orth'
@@ -32,7 +33,7 @@ def travel_options(location):
     return location
 
 
-def input_direction(location):
+def input_direction(a_str, location):
     direction = input('Direction: ')
     direction=direction.lower()
 
@@ -67,14 +68,18 @@ def input_direction(location):
     elif location == 2.1 and direction == 'n':
         location = 2.2
     else:
-        print('Not a valid direction!')
-    return location
+        a_str='Not a valid direction!'
+        print(a_str)
+    return a_str, location
 
 
 while location!=3.1:
     travel_options(location)
 
-    location=input_direction(location)
+    s,location=input_direction(a_str,location)
+
+    if s=='Not a valid direction!':
+        location=input_direction(s,location)
 
 else:
     print('Victory!')
