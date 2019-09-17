@@ -7,10 +7,8 @@
 
 
 initial_location = 1.1
-
 location = initial_location
 
-a_str=''
 
 def travel_options(location):
     N='(N)orth'
@@ -33,53 +31,65 @@ def travel_options(location):
     return location
 
 
-def input_direction(a_str, location):
-    direction = input('Direction: ')
-    direction=direction.lower()
+def input_direction(location):
+    travel_options(location)
+    
+    while True:
+        direction = input('Direction: ')
+        direction=direction.lower()
 
-    if location == 1.1 and direction == 'n':
-        location = 1.2
-    elif location == 1.2 and direction == 'n':
-        location = 1.3
-    elif location == 1.2 and direction == 's':
-        location = 1.1
-    elif location == 1.2 and direction == 'e':
-        location = 2.2
-    elif location == 1.3 and direction == 'e':
-        location = 2.3
-    elif location == 1.3 and direction == 's':
-        location = 1.2
-    elif location == 2.3 and direction == 'e':
-        location = 3.3
-    elif location == 2.3 and direction == 'w':
-        location = 1.3
-    elif location == 3.3 and direction == 's':
-        location = 3.2
-    elif location == 3.3 and direction == 'w':
-        location = 2.3
-    elif location == 3.2 and direction == 'n':
-        location = 3.3
-    elif location == 3.2 and direction == 's':
-        location = 3.1
-    elif location == 2.2 and direction == 's':
-        location = 2.1
-    elif location == 2.2 and direction == 'w':
-        location = 1.2
-    elif location == 2.1 and direction == 'n':
-        location = 2.2
-    else:
-        a_str='Not a valid direction!'
-        print(a_str)
-    return a_str, location
+        if location == 1.1 and direction == 'n':
+            location = 1.2
+            return location
+        elif location == 1.2 and direction == 'n':
+            location = 1.3
+            return location
+        elif location == 1.2 and direction == 's':
+            location = 1.1
+            return location
+        elif location == 1.2 and direction == 'e':
+            location = 2.2
+            return location
+        elif location == 1.3 and direction == 'e':
+            location = 2.3
+            return location
+        elif location == 1.3 and direction == 's':
+            location = 1.2
+            return location
+        elif location == 2.3 and direction == 'e':
+            location = 3.3
+            return location
+        elif location == 2.3 and direction == 'w':
+            location = 1.3
+            return location
+        elif location == 3.3 and direction == 's':
+            location = 3.2
+            return location
+        elif location == 3.3 and direction == 'w':
+            location = 2.3
+            return location
+        elif location == 3.2 and direction == 'n':
+            location = 3.3
+            return location
+        elif location == 3.2 and direction == 's':
+            location = 3.1
+            return location
+        elif location == 2.2 and direction == 's':
+            location = 2.1
+            return location
+        elif location == 2.2 and direction == 'w':
+            location = 1.2
+            return location
+        elif location == 2.1 and direction == 'n':
+            location = 2.2
+            return location
+        else:
+            print('Not a valid direction!')
 
 
 while location!=3.1:
-    travel_options(location)
 
-    s,location=input_direction(a_str,location)
-
-    if s=='Not a valid direction!':
-        location=input_direction(s,location)
+    location=input_direction(location)
 
 else:
     print('Victory!')
